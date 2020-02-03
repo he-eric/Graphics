@@ -1,0 +1,53 @@
+Delete shaders folder
+shaders already defined in html code
+
+randomly choose a point p0 inside the triangle
+randomly choose one vertex in the original triangle
+create a point midway, p1,  between p0 and v2
+randomly choose one vertex in original tringle
+create a point midway, p2, between p1 and v3
+continue recursively/iteratively
+
+expect output to be random! in this case see something with organization
+fractal patterns
+whats the most efficient way to display these points
+
+psuedocode
+directly render once point calcualted
+calculate point via CPU then display via GPU
+really slow data transfer/bandwidth
+
+openGL2 vs openGL3
+GL2 was immediate mode graphics, display a point immediately after its generated
+no memory of data stored, to display again must redo entire algorithm
+
+second attempt to be more efficient / retained mode graphics
+generate and store points
+after loop then display all points at once
+solves the problem of regenerating the points
+slow process whenever array of points changed slightly CPU -> GPU data transfer
+
+psuedo code V3
+same for loop from retained mode graphics
+difference in displaying points
+store the array in GPU instead by sending points to GPU once and then display
+possible because of programmable shaders
+"why is this code fast?" separates data transfer and display/possible because of programmable shaders
+but shaders cannot create or destroy data
+advantage of this method lost if data displayed once
+
+common folder - MVnew.js
+defines prototypes for 2d, 3d vectors
+function vec2() defines 2d vectors
+key thing defining a array of size 2 of type 'vec2'
+
+flatten function converts vectors/matrix into streams of numbers to send to GPU
+
+var u,v,p
+taking the midpoints of 2 sides of the triangle and connecting them then taking the midpoint of the new line
+
+second method
+using mix function / cosmetic change
+switched to 3d points, z coord all 0
+
+

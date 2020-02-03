@@ -1,0 +1,18 @@
+Framebuffer
+Rasterization - moving 3D objects to pixels on 2D screen
+Graphics pipeline
+hidden surface removal - deleting primitives/fragments not visible to you
+Fragment processor - what is the color of each fragment and how do you want it to be displayed
+What exactly is a fragment? a group of pixels
+Clipper and primitive assembler precursor to hidden surface removal
+
+Hardware
+GPU ultimately send data to display
+
+Communication CPU - GPU expensive, copy model data to GPU memory once
+real time rendering corresponds to at least 30 frames a second
+Pre-processing step - done once, rendering step repeated
+Transformations data calculated by GPU
+
+Example
+js file two parts, vertex and fragment shader code 
