@@ -1,0 +1,65 @@
+Classify graphics API into 7 groups
+PAVTICQ
+primitive functions - low level objects like points, lines, polygons.
+			unsupported primitives built thru supported
+			
+question:
+fragments pipeline - end are shaders
+shaders shade objects crude answer
+define color for each fragment from 3d to 2d
+color blending
+
+attribute functions - specify how primitives are drawn, filled
+
+viewing functions - specify various views
+			WebGL relies on transformations
+
+transformation functions - rotate apply 3x3 matrix
+				translate add 3d offset
+				
+input functions
+
+question: why is input relevant 
+graphics related to immersive environments
+
+control functions - error control
+
+query functions - 
+
+everything has state, unless directed by code parameters persist
+
+geometric vs image primitives
+
+gl.drawArrays(gl.POINTS, 0, numPoints)
+	gl = WebGL context
+	gl.POINTS = specify 3D points
+	numPoints = specify number of points
+drawArrays renders primitives
+
+a point can be a single pixel or a group
+lines are 2 points
+gl.POINTS each vertex displayed as a pixel
+gl.LINES display unconnected line segments where pairs of pts specify a segment
+gl.LINE_STRIP connect consecutive points except for first and last
+gl.LINE_LOOP 
+
+interior may overwrite edge display
+simple, convex, flat well defined polygon
+flat polygon lives in a plane
+simple polygon no 2 edges cross
+convex polygon line segment inside polygon
+only triangles
+	3 nonlinear pts define a plane as well
+triangles can be displayed as vertices gl.POINTS, as edges (linetypes), or interior filled
+a point can have a size in graphics pipeline
+	specify point size to look bigger
+
+display a triangle
+fill interior
+display line segments
+display vertices
+in this order
+
+gl.TRIANGLES connect triplets of 3 pts 
+gl.TRIANGLE_STRIP 
+gl.TRIANGLE_FAN

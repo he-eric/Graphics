@@ -1,0 +1,72 @@
+triangles are a nice way to draw polygons
+rather than draw polygons with more than 3 vertices its easier to draw
+a triangle 
+	simple, flat, convex
+triangulation 
+note that not all triangulations are equivalent
+different sets of vertices will produce varying triangles
+	skinny triangles are a problem
+	prefer not skinny triangles
+computational geometry
+text
+stroke text lives in 2d
+	
+modern graphics pipelines
+raster text lives in pixel space
+	simple, fast, characters defined as rectangles of bits
+	bit blocks, each block defines a single characeter
+	no transforamtion, just moving bits extremely fast
+	exploit GPU
+
+Color skipped in lecture; read in text
+
+Viewing
+camera is mechanism that lives in 3d world allowing you to see objects
+has field of view, orientation
+camera determines what you can see
+get to specify 3d world and camera independently
+
+orthographic view
+default view in WebGL
+
+window system
+
+aspect ratio
+on exam
+distortion
+avoid distortion if clipping rectangle and display window have same ratio
+but restrictive
+
+viewport more flexible appraoch to avoid distortion
+viewport is subset of display window
+
+event processing
+in graphics pipeline catch keystrokes, mouseclicks...
+when events occur they are placed in a event queue
+can choose to cause an action through listeners or callbacks
+
+gasket code
+bottom
+canvas element named "gl-canvas" with width and height
+3 actions
+	init - shaders, data structures, setting callbacks
+	generate geometry
+	render
+
+gasket.js - init, generatea, render
+variables at top
+get canvas id
+array of points "positions"
+configure the viewport
+set color to white
+initShaders and useProgram load shaders
+bufferId creared by webgl element
+	vertex buffer object
+bindBuffer call makes bufferId the current buffer
+bufferData sends to GPU
+	positions array "flattend" stream of numbers
+	static_draw hint to GPU for how data
+gl.FLOAT and size is 2 vertex coordinates
+
+gl.position = aposition is where GPU is extracting points
+gl.position is available to fragment shader
