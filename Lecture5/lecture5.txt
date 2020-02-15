@@ -1,0 +1,40 @@
+Homework
+Use queue 
+Have a triange, init queue with 3 "sides"
+pop side and calculate 4 new sides
+change the sierpinsky geometry code only
+EC: worth 100% of HW
+Discuss render func
+clear clears buffer
+drawArrays renders using points
+for this to work correctly vertex and fragment shader need to be created
+VBO = vertex buffer object ; how we communicate with GPU
+executing drawArrays each point passed executes a vertex shader call
+vertex shader passes location to rasterizer (hardware) converting to pixel space
+
+vertex shader written in GLSL
+each shader has a main func
+includes matrix and vector types
+first line of every shader is #version 300 es
+declare version of GLSL
+in vec4 aPosition - in for input, vec4 4 element array floats
+output of vertex shader is input to fragment shader
+gl_position in-built variable that is passed to rasterizer
+rasterizier outputs clipped primitive -> fragment 
+fragment shader inputs fragment from rasterizer -> output a color
+
+fragment shader
+out -> output 
+vec4 array of floating pt #s
+fcolor = vec4(1.0, 0, 0, 1.0); RGB scaled from 0.0 - 1.0
+precision mediump float; -> run on all platforms, some support high precision
+
+in the html file, shaders are init with script tag
+in the js file, var program = initShaders(...);
+initShaders links vertex and fragment shaders
+
+vertexAttribPointer -> tells GPU how to make sense of stream of data
+last parameter is address in buffer
+
+Sierpinski gasket with polygons
+

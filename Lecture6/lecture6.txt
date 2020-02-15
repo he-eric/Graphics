@@ -1,0 +1,11 @@
+how does the math make sense for the color scheme
+color coordinates go 0-1
+range values of x, y, z -1 to 1
+The clipping of the space is (-1,-1,-1) (1,1,1) thus 1 to 1 mapping
+
+if points overlap, how does shader figure out what color to assign
+fragment shader colors the fragment multiple times
+
+hidden surface removal algorithms (midterm)
+z buffer turned on
+render func now includes clearing depth buffer
