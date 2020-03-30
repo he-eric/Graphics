@@ -1,0 +1,22 @@
+Midterm
+Framebuffer - buffer that holds all vertices
+	      	     	  	    X - all pixels
+				    multiple buffers for meta data (color)
+
+Rasterization - transform primitives to pixels
+	      GPU
+
+graphics pipeline - vertex process, clipping primitive assembly, rast, fragment process
+
+webGL - browser framework for openGL, crossplatform, js API
+      use of GPU on browser
+
+realtime rendering - 30 fps
+
+3 standards for graphics - immediate vs retained mode graphics
+  	    		   or send data once let shaders do
+
+hidden surface removal - gl enable(gl.depth_test)
+
+uniforms - vars from application passed to vertex shader
+	   animation

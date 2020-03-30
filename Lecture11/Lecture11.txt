@@ -1,0 +1,51 @@
+HW2
+Generating a maze - Treat as graph problem, generate midpoints per cell, generate edges between cells
+	     	  - can generate 1 specific graph for a given m x n
+		  - 3 key bindings, rotate direction with <-, ->, walk forward with up key
+
+homogeneous coordinates, abstract data types
+Geometric objects defined by scalars, points, vectors
+Each type obey axioms
+
+point   - 1 property: location
+scalars - measure distance between two points
+	- real #s and complex
+	- multiplicative & additivie inverse
+vectors - direction & magnitude
+	- no fixed location in space
+
+Points are connected by directed line segments
+       - diredcted line segments have magnitude, direction
+       	 thus a vector
+
+Vectors are equal given same magnitude, direction
+Vector arithmetic 	2A = B    OR head-to-tail rule
+			->  -->
+Addition, scalar multiplication
+Zero vector - no magnitutde, undefined orientation
+inverse vectors
+
+Point-vector addition   - P = Q + v move from point Q to point P using vector v
+Point-point subtraction - P - Q = v
+
+midterm question - explain if some vector arithmetic makes sense
+
+Do not need a coordinate system to define a point
+   Having a coordinate system only gives a point coordinates
+
+|av| = |a||v|
+
+Parametric form of a line
+P(a) = P0 + ad
+Affine sums
+P    = Q  + av defines all pts on the line from Q in direction of v
+Rewrite v to: R-Q where R is the head of v
+P    = Q + a(R-Q)
+P    = aR + (1-a)Q
+
+Convex objs
+line segs are convex obj
+
+Obj defined by n pts {P1, P2, P3,...Pn}
+P = a1P1 + a2P2 + a3P3... + anPn is true of a1 + a2 + ... + an = 1
+The pts formed by the affine sum with an > 0 form convex hull

@@ -1,0 +1,18 @@
+request mode - buffer not returned until device triggered
+	ex: java program waiting on input from trigger "enter key"
+
+sample mode - no trigger necessary, immediate return upon func call
+       assumes buffer filled before func call
+
+request/sample modes inadequate for programs that require multiple devices for input
+
+event mode can handle real time interactions
+      event queue holds device measure (identifer)
+
+callback
+	subdivide events to keyboard, mouse, window events
+
+
+clients and servers
+events and event listeners
+

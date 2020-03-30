@@ -1,0 +1,74 @@
+At least one question on midterm from this lecture
+static scene -> interactive graphics
+How to display animation without input from user?
+Need a indepth look at web browser interation with graphics - discussion of buffers (midterm)
+How to display rotating square in webGL?
+Approach 1
+	Generate vertex
+	Send data
+	Render
+	Continue: but this approach negates advantages of shaders
+We want to minimize communication between CPU and GPU
+Approach 2
+Recursive rendering process
+Consider these points:
+	cos0, sin0
+	-sin0, cos0
+	-cos0, -sin0
+	sin0, -cos0
+	All of which lie on the unit circle
+All 4 of these points form a square of length sqrt(2)
+Starting with 0 = 0 gives 4 vertices:
+	Set up the initial array
+	Pack and send the array
+	Render
+Shows initial square
+Could put the code in a loop and increment 0 slowly resulting in an animation
+But this puts calculation stress on CPU instead of GPU
+Approach 2:
+	Send initial points to GPU
+	Alter 0 in rnder func
+	Send new 0 to GPU
+Shader has variables that CPU can send to 
+New type of shader variable: uniform float/int/...
+	in vec4 aPosition: coord for point to be displayed
+	uniform float uTheta: compute sin and cos value inside shader
+	Inside shader itself we are computing real time x & y coord
+
+UTheta passed in from application
+How to get 0 to shader?
+Make a link between UTheta in shader and a variable in application
+progtam is link between shader and app
+Get the location of UTheta and send data to that location:
+	thetaLoc = gl.getUniformLocation(program, "UTheta")
+	gl.uniform1f(thetaLoc, theta) 
+	1f corresponds to type float that we are sending
+	can send scalars, vecs, matrices
+	can send values or pointers
+	can also send to fragment shader: affect pixels directly on screen
+	applying transform to fragment shader is similar to a camera transform
+
+How is display changing on screen? (midterm)
+onload event startes application
+render() is last line in onload()
+but render() is recursive so code never ends
+changes to display arent finished
+refresh controlled by hardware vs rotating square of software
+double buffering:
+	front and back buffer
+	front displayed
+	back waiting to receive new transforms
+	swap
+
+How and when buffer swap triggered?
+double buffering does not solve:
+	complex displays that require multiple frames to draw 
+	ensure you never see partial display
+Timer:
+setInterval(render, ms)
+call render after ms milliseconds
+0 ms call render as fast as possible
+requestAnimFrame:
+requires function
+double buffering helps recursive rendering
+
