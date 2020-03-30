@@ -1,0 +1,9 @@
+HW 2 Computer Graphics
+Eric He (eh414)
+
+Some notes about my implementation:
+  Created two classes, graph and node.
+  Created the maze with a DFS search of the graph
+  1x1 mazes do not work
+  There is only 1 button, the refresh button.
+  There are two input texts, each for row and col size.
